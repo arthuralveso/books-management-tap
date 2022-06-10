@@ -6,6 +6,7 @@ const sessionRouter = Router();
 
 sessionRouter.post("/", async (req, res) => {
   let user = await User.findOne({ email: req.body.email });
+  console.log(req.body);
 
   try {
     await authService.loginValidate(user, req.body.password);

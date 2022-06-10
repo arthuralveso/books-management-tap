@@ -7,7 +7,7 @@ const userRouter = Router();
 userRouter.get(
   "/",
   auth.isAuthenticated,
-  auth.hasRole("admin"),
+  auth.hasRole("user"),
   async (req, res) => {
     res.json(await User.find());
   }
